@@ -25,9 +25,15 @@ async function loadEvidence(){
       });
       box.innerHTML=rows.map(d=>{
   const url="documents/"+encodeURIComponent(d.filename);
-  return `<article class="doccard"><div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
-  <small>${d.date}</small><h3>${d.title}</h3>
-  <div class="docaction"><span class="pending">PDF not uploaded yet</span></div>
+  return `<article class="doccard" data-c="${d.category}">
+    <div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
+    <small>${d.date}</small>
+    <h3>${d.title}</h3>
+    <div class="docaction">
+      <a class="pdfbtn" href="${url}" target="_blank" rel="noopener">
+        View PDF
+      </a>
+    </div>
   </article>`;
 }).join("") || "<p>No matching documents.</p>";
     }
