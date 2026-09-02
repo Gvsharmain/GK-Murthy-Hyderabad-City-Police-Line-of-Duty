@@ -13,17 +13,8 @@ async function loadEvidence(){
       return r.json();
     });
     const q=document.querySelector("#q"), cat=document.querySelector("#cat");
-
-    async function exists(url){
-      try{
-        const r=await fetch(url,{method:"HEAD",cache:"no-store"});
-        return r.ok;
-      }catch(e){ return false; }
-    }
-
-    async function render(){
-      box.innerHTML='<p class="loading">Loading the evidence register…</p>';
-      const s=(q.value||"").toLowerCase().trim(), c=cat.value;
+    function render(){
+      const s=(q?.value||"").toLowerCase().trim(), c=cat?.value||"all";
       const rows=data.filter(d=>{
         const okc=c==="all" ||
           (c==="comp"&&d.category==="Compassionate Appointment") ||
@@ -32,28 +23,19 @@ async function loadEvidence(){
           (c==="service"&&d.category==="Service / Death");
         return okc && (d.id+" "+d.date+" "+d.category+" "+d.title).toLowerCase().includes(s);
       });
-
-      const cards=await Promise.all(rows.map(async d=>{
+      box.innerHTML=rows.map(d=>{
         const url="documents/"+encodeURIComponent(d.filename);
-        const available=await exists(url);
-        return `<article class="doccard">
-          <div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
-          <small>${d.date}</small>
-          <h3>${d.title}</h3>
-          <div class="docaction">
-            ${available
-              ? `<a class="pdfbtn" href="${url}" target="_blank" rel="noopener">View PDF</a><span class="ready">PDF available</span>`
-              : `<span class="pending">PDF not uploaded yet</span>`}
-          </div>
+        return `<article class="doccard"><div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
+        <small>${d.date}</small><h3>${d.title}</h3>
+        <div class="docaction"><span class="pending">PDF not uploaded yet</span></div>
         </article>`;
-      }));
-      box.innerHTML=cards.join("") || "<p>No matching documents.</p>";
+      }).join("") || "<p>No matching documents.</p>";
     }
     q?.addEventListener("input",render);
     cat?.addEventListener("change",render);
     render();
   }catch(e){
-    box.innerHTML="<p>Evidence register could not be loaded. Please confirm that documents/manifest.json is published.</p>";
+    box.innerHTML="<p>Evidence register could not be loaded. Check that documents/manifest.json is present.</p>";
   }
 }
 loadEvidence();
