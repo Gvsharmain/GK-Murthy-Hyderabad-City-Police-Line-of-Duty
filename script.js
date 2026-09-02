@@ -24,12 +24,12 @@ async function loadEvidence(){
         return okc && (d.id+" "+d.date+" "+d.category+" "+d.title).toLowerCase().includes(s);
       });
       box.innerHTML=rows.map(d=>{
-        const url="documents/"+encodeURIComponent(d.filename);
-        return `<article class="doccard"><div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
-        <small>${d.date}</small><h3>${d.title}</h3>
-        <div class="docaction"><span class="pending">PDF not uploaded yet</span></div>
-        </article>`;
-      }).join("") || "<p>No matching documents.</p>";
+  const url="documents/"+encodeURIComponent(d.filename);
+  return `<article class="doccard"><div class="doctop"><b>${d.id}</b><span>${d.category}</span></div>
+  <small>${d.date}</small><h3>${d.title}</h3>
+  <div class="docaction"><span class="pending">PDF not uploaded yet</span></div>
+  </article>`;
+}).join("") || "<p>No matching documents.</p>";
     }
     q?.addEventListener("input",render);
     cat?.addEventListener("change",render);
