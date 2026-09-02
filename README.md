@@ -1,21 +1,22 @@
-# G.K. Murthy Case Record — V3 Evidence Portal
+# G.K. Murthy Case Record — V4 Evidence Portal
 
-This V3 package adds an Evidence Room with a machine-readable manifest. Each document has a stable ID and publication filename. The website generates a View PDF link for each filename.
+V4 is the corrected public Evidence Room build.
 
-## To publish the actual PDFs
-1. Obtain the PDF from your File Library.
-2. Redact publication-sensitive information.
-3. Rename it exactly as shown in `documents/manifest.json`.
-4. Put it into `documents/`.
-5. Upload the updated `documents/` folder to the GitHub repository.
+## GitHub update
+Replace these three files in the existing repository:
+- index.html
+- style.css
+- script.js
 
-## Evidence IDs
-SV = Service / Death
-CA = Compassionate Appointment
-LO = Line of Duty
-VE = Vigilance
+Keep the existing:
+- documents/manifest.json
 
-## Important
-The File Library copies are not automatically public website assets. The website package therefore does not silently publish them. The public site should contain only copies you have reviewed and deliberately uploaded.
+Do not upload actual PDFs until they have been reviewed and redacted.
 
-The content distinguishes documentary records from the family's position and matters pending examination. It does not represent the site as an official Government or Police website.
+## How the Evidence Room works
+The page reads `documents/manifest.json`, filters by category/search, and checks whether each listed PDF actually exists. A document shows **View PDF** only when its corresponding file is present. Otherwise it shows **PDF not uploaded yet**.
+
+## Public-document safety
+Only upload copies you deliberately approve for public release. Remove unnecessary identity numbers, bank information, signatures, phone numbers, residential details and third-party personal information.
+
+The site is family-maintained and is not an official Government of Telangana or Hyderabad City Police website.
