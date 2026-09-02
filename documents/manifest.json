@@ -1,0 +1,19 @@
+[
+  {"id":"SV-01","category":"Service / Death","date":"26-08-1985","title":"Promotion as Sub-Inspector","filename":"SV-01_1985_Promotion-Service-Record.pdf","status":"Awaiting redacted PDF"},
+  {"id":"SV-02","category":"Service / Death","date":"20-02-2001","title":"Struck-off order following death in service","filename":"SV-02_2001-02-20_Struck-Off-Order.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-01","category":"Compassionate Appointment","date":"19-03-2001","title":"Original compassionate appointment application","filename":"CA-01_2001-03-19_Original-Application.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-02","category":"Compassionate Appointment","date":"18-03-2003","title":"Nursing Orderly appointment proceedings","filename":"CA-02_2003-03-18_Nursing-Orderly-Proceedings.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-03","category":"Compassionate Appointment","date":"2004","title":"Nizamia General Hospital vacancy / joining communication","filename":"CA-03_2004_NGH-Memo.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-04","category":"Compassionate Appointment","date":"17-10-2005","title":"Proceedings A4/6169/2004 — Junior Assistant consideration","filename":"CA-04_2005-10-17_A4-6169-2004.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-05","category":"Compassionate Appointment","date":"2006-2007","title":"Junior Assistant qualification / vacancy processing","filename":"CA-05_2006-2007_Junior-Assistant-Process.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-06","category":"Compassionate Appointment","date":"02-11-2017","title":"Collector endorsement on dependent-son request","filename":"CA-06_2017-11-02_Collector-Endorsement.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-07","category":"Compassionate Appointment","date":"16-03-2021","title":"District Collector Detailed Report","filename":"CA-07_2021-03-16_Collector-Detailed-Report.pdf","status":"Awaiting redacted PDF"},
+  {"id":"CA-08","category":"Compassionate Appointment","date":"09-05-2022","title":"Government Memo No. 434-P/Ser.II/A2/2020-2","filename":"CA-08_2022-05-09_Government-Memo.pdf","status":"Awaiting redacted PDF"},
+  {"id":"LO-01","category":"Line of Duty","date":"17-10-2025","title":"Line of Duty / Police Martyr representation","filename":"LO-01_2025-10-17_LoD-Representation.pdf","status":"Awaiting redacted PDF"},
+  {"id":"LO-02","category":"Line of Duty","date":"15-12-2025","title":"DGP memorandum Rc.No.297/ME.5/2020-2025","filename":"LO-02_2025-12-15_DGP-Memorandum.pdf","status":"Awaiting redacted PDF"},
+  {"id":"LO-03","category":"Line of Duty","date":"19-01-2026","title":"Commissioner endorsement HCP/W/W3/0004/2025-26","filename":"LO-03_2026-01-19_CP-Endorsement.pdf","status":"Awaiting redacted PDF"},
+  {"id":"LO-04","category":"Line of Duty","date":"21-02-2026","title":"Administrative review / Duty Nexus representation","filename":"LO-04_2026-02-21_Administrative-Review.pdf","status":"Awaiting redacted PDF"},
+  {"id":"LO-05","category":"Line of Duty","date":"04-03-2026","title":"Hyderabad City Police forwarding to DGP","filename":"LO-05_2026-03-04_HCP-Forwarding.pdf","status":"Awaiting redacted PDF"},
+  {"id":"VE-01","category":"Vigilance","date":"24-07-2026","title":"Vigilance complaint","filename":"VE-01_2026-07-24_Vigilance-Complaint.pdf","status":"Awaiting redacted PDF"},
+  {"id":"VE-02","category":"Vigilance","date":"04-08-2026","title":"Vigilance U.O. Note / forwarding to Home Department","filename":"VE-02_2026-08-04_Vigilance-Forwarding.pdf","status":"Awaiting redacted PDF"}
+]
