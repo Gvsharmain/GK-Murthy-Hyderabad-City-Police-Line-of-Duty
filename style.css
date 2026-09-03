@@ -745,6 +745,67 @@ footer b {
 
   .hero {
     padding: 60px 0;
+    /* VIDEO RECORD */
+
+.video-card {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-info {
+  padding: 10px 0;
+}
+
+.video-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.video-info h3 {
+  margin: 0 0 16px;
+}
+
+.video-info p {
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 800px) {
+
+  .video-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .video-info {
+    padding: 0;
+  }
+
+}
   }
 
 }
