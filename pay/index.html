@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Support the Documentation — G.K. Murthy Case Record</title>
+
+  <meta
+    name="description"
+    content="Support the documentation of service records, sacrifice and the G.K. Murthy Case Record."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background:
+        linear-gradient(
+          135deg,
+          #09162c 0%,
+          #102b4d 55%,
+          #18365d 100%
+        );
+      color: #162033;
+      font-family: Arial, sans-serif;
+    }
+
+    .payment-card {
+      width: min(480px, 100%);
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 26px;
+      text-align: center;
+      box-shadow: 0 25px 70px rgba(0,0,0,.35);
+    }
+
+    .kicker {
+      color: #c7a04d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #09162c;
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .intro {
+      color: #63718a;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 auto 25px;
+      max-width: 390px;
+    }
+
+    .upi-box {
+      padding: 18px;
+      background: #f4f7fb;
+      border: 1px solid #dce3ec;
+      border-radius: 10px;
+      margin-bottom: 22px;
+    }
+
+    .upi-label {
+      display: block;
+      color: #63718a;
+      font-size: 11px;
+      letter-spacing: .1em;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+
+    .upi-id {
+      display: block;
+      color: #18365d;
+      font-size: 17px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .pay-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      background: #5f259f;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(95,37,159,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .pay-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(95,37,159,.32);
+    }
+
+    .pay-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #5f259f;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .amount-note {
+      margin: 14px 0 0;
+      color: #63718a;
+      font-size: 11px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: #18365d;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid #dce3ec;
+      color: #8a95a6;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 520px) {
+
+      body {
+        padding: 16px;
+      }
+
+      .payment-card {
+        padding: 27px 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .pay-button {
+        min-height: 54px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="payment-card">
+
+    <div class="kicker">
+      SUPPORT · DOCUMENTATION
+    </div>
+
+    <h1>
+      Support the Documentation
+    </h1>
+
+    <p class="intro">
+      Your contribution helps preserve service records,
+      truth and dignity.
+    </p>
+
+    <div class="upi-box">
+
+      <span class="upi-label">
+        UPI ID
+      </span>
+
+      <span class="upi-id">
+        vyom101292@icici
+      </span>
+
+    </div>
+
+    <a
+      class="pay-button"
+      href="upi://pay?pa=vyom101292@icici&pn=Vishnu%20Sharma&cu=INR"
+      aria-label="Pay using PhonePe or another UPI app"
+    >
+      <span class="pay-icon">
+        ₹
+      </span>
+
+      Pay with PhonePe / UPI
+    </a>
+
+    <p class="amount-note">
+      Enter your contribution amount in your UPI app.
+    </p>
+
+    <a
+      class="back-link"
+      href="../#support"
+    >
+      ← Back to Documentation
+    </a>
+
+    <div class="footer-note">
+      Contributions are voluntary.
+      This page is part of the family-maintained documentary portal
+      and is not an official Government website.
+    </div>
+
+  </main>
+
+</body>
+</html>
