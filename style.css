@@ -1053,3 +1053,38 @@ footer b {
 #support {
   scroll-margin-top: 90px;
 }
+
+/* PHONEPE UPI BUTTON */
+
+.phonepe-pay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.phonepe-pay img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.phonepe-pay:hover {
+  transform: scale(1.08);
+}
+
+@media (max-width: 520px) {
+
+  .phonepe-pay {
+    margin-left: 8px;
+  }
+
+  .phonepe-pay img {
+    width: 30px;
+    height: 30px;
+  }
+
+}
