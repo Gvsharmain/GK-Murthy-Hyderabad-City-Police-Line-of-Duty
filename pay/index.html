@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Support the Documentation — G.K. Murthy Case Record</title>
-
+  
   <meta
     name="description"
     content="Support the documentation of service records, sacrifice and the G.K. Murthy Case Record."
   >
 
   <style>
-    * {
+        * {
       box-sizing: border-box;
     }
 
@@ -175,7 +175,39 @@
       }
 
     }
+    /* PAYMENT QR */
+
+.payment-qr {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.payment-qr img {
+  display: block;
+  width: 210px;
+  height: 210px;
+  max-width: 70vw;
+  margin: 0 auto;
+  background: #fff;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.payment-qr p {
+  margin: 10px 0 0;
+  color: #63718a;
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  .payment-qr img {
+    width: 190px;
+    height: 190px;
+  }
+}
   </style>
+  
 </head>
 
 <body>
@@ -206,6 +238,7 @@
       </span>
 
     </div>
+    <!-- QR CODE WILL GO HERE -->
     <div class="payment-qr">
 
   <img
