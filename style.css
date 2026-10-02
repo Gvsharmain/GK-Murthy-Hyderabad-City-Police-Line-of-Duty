@@ -1119,4 +1119,74 @@ footer b {
   }
 
 }
-/
+/* IMAGE LIGHTBOX */
+
+.zoomable-image {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.image-lightbox.active {
+  display: flex;
+}
+
+.image-lightbox img {
+  display: block;
+  max-width: 95vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.image-lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  z-index: 10000;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+}
+
+.image-lightbox-close:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 700px) {
+  .image-lightbox {
+    padding: 15px;
+  }
+
+  .image-lightbox img {
+    max-width: 96vw;
+    max-height: 88vh;
+  }
+
+  .image-lightbox-close {
+    top: 10px;
+    right: 12px;
+    font-size: 36px;
+  }
+}
+
+
+
+
