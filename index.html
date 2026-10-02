@@ -407,7 +407,7 @@
           <img
             src="documents/Document_2026.png"
             alt="Government and Police correspondence dated 04-03-2026 regarding the representation"
-            class="timeline-evidence-image document-evidence-image"
+             class="timeline-evidence-image document-evidence-image zoomable-image"
           >
         </div>
 
@@ -432,7 +432,7 @@
           <img
             src="documents/Telephone_Message.png"
             alt="Telephone Message recording the death of SI G. Krishna Murthy while on duty"
-            class="timeline-evidence-image"
+            class="timeline-evidence-image zoomable-image"
           >
         </div>
 
@@ -1132,9 +1132,22 @@
   </div>
 
 </footer>
-
-
 <script src="script.js"></script>
+<!-- IMAGE LIGHTBOX -->
+<div id="imageLightbox" class="image-lightbox" aria-hidden="true">
+  <button
+    type="button"
+    class="image-lightbox-close"
+    aria-label="Close image"
+  >
+    &times;
+  </button>
 
+  <img
+    id="lightboxImage"
+    src=""
+    alt=""
+  >
+</div>
 </body>
 </html>
