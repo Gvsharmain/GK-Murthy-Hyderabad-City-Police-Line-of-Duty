@@ -385,6 +385,22 @@ document.addEventListener("keydown", event => {
   }
 });
 
+const flowerPhoto = document.querySelector(".flower-photo");
+
+if (flowerPhoto) {
+  for (let i = 0; i < 14; i++) {
+    const petal = document.createElement("span");
+
+    petal.className = "petal";
+
+    petal.style.left = `${Math.random() * 100}%`;
+    petal.style.animationDuration = `${4 + Math.random() * 4}s`;
+    petal.style.animationDelay = `${Math.random() * 6}s`;
+    petal.style.transform = `scale(${0.6 + Math.random() * 0.7})`;
+
+    flowerPhoto.appendChild(petal);
+  }
+}
 /* START */
 
 loadEvidence();
