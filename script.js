@@ -295,7 +295,6 @@ async function loadEvidence() {
       Escape text coming from manifest.json.
       This prevents accidental HTML injection.
     */
-
     function escapeHtml(value) {
 
       return String(value ?? "")
@@ -351,6 +350,40 @@ async function loadEvidence() {
 
 }
 
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.querySelector(".image-lightbox-close");
+
+document.querySelectorAll(".zoomable-image").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
 
 /* START */
 
