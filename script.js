@@ -155,14 +155,17 @@ async function loadEvidence() {
           categoryMatch =
             doc.category === "Vigilance";
         }
+if (category === "service") {
+  categoryMatch =
+    doc.category === "Service / Death";
+}
 
-        if (category === "service") {
-          categoryMatch =
-            doc.category === "Service / Death";
-        }
+if (category === "lokayukta") {
+  categoryMatch =
+    doc.category === "Lokayukta / Administrative Grievance";
+}
 
-
-        const searchableText =
+         const searchableText =
           [
             doc.id,
             doc.date,
