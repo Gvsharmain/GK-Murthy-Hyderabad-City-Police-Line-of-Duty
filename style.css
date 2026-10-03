@@ -1228,6 +1228,82 @@ footer b {
     transform: translate3d(-25px, 430px, 0) rotate(360deg);
     opacity: 0;
   }
+.support-toggle {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  background:
+    linear-gradient(
+      135deg,
+      #09162c 0%,
+      #102b4d 55%,
+      #18365d 100%
+    );
+  color: #fff;
+  border-top: 4px solid #c7a04d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.support-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.support-toggle-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: #e2c36e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.support-toggle-title {
+  display: block;
+  color: #fff;
+  font-family: "Libre Baskerville", serif;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.support-toggle-arrow {
+  flex: 0 0 auto;
+  color: #e2c36e;
+  font-size: 16px;
+  transition: transform .2s ease;
+}
+
+#support[open] .support-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+.support-toggle:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #0d1d37 0%,
+      #15365d 55%,
+      #1c416d 100%
+    );
+}
+
+@media (max-width: 700px) {
+  .support-toggle {
+    padding: 20px 18px;
+  }
+
+  .support-toggle-title {
+    font-size: 19px;
+  }
+
+  .support-toggle-arrow {
+    font-size: 14px;
+  }
 }
 
 
