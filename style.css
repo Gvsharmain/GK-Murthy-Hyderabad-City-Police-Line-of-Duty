@@ -1305,27 +1305,31 @@ footer b {
     font-size: 14px;
   }
 }
-/* Red roses */
-.red-rose {
+
+/* RED ROSES */
+.flower-photo .red-rose {
   position: absolute;
-  top: -40px;
-  z-index: 10;
+  top: -45px;
+  left: 50%;
+  z-index: 20;
   display: block;
-  font-size: 26px;
-  line-height: 1;
+  width: 32px;
+  height: 32px;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
   pointer-events: none;
   user-select: none;
-  animation-name: roseFall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: top, transform, opacity;
+  opacity: 1;
+  animation: roseFall 9s linear infinite;
 }
 
 @keyframes roseFall {
   0% {
-    top: -40px;
+    top: -45px;
     opacity: 0;
-    transform: translateX(0) rotate(0deg) scale(0.8);
+    transform: translateX(0) rotate(0deg) scale(.8);
   }
 
   10% {
@@ -1333,12 +1337,12 @@ footer b {
   }
 
   50% {
-    transform: translateX(25px) rotate(180deg) scale(1);
+    transform: translateX(30px) rotate(180deg) scale(1);
   }
 
   100% {
     top: 105%;
     opacity: 0;
-    transform: translateX(-25px) rotate(360deg) scale(0.8);
+    transform: translateX(-30px) rotate(360deg) scale(.85);
   }
 }
