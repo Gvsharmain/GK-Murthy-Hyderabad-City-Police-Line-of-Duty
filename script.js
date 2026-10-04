@@ -465,4 +465,41 @@ loadEvidence();
   setInterval(updateBackgroundAudio, 1000);
 })();
 
-/* STOP BACKGROUND AUDIO WHEN YOUTUBE PLAYS */
+/* YOUTUBE AUDIO STATE MONITOR */
+(() => {
+  const audio = document.getElementById("background-audio");
+
+  if (!audio) return;
+
+  const youtubeFrames = Array.from(document.querySelectorAll("iframe"))
+    .filter(frame =>
+      frame.src.includes("youtube.com/embed/")
+    );
+
+  if (!youtubeFrames.length) return;
+
+  function stopBackgroundAudio() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  window.onYouTubeIframeAPIReady = function () {
+    youtubeFrames.forEach(frame => {
+      new YT.Player(frame, {
+        events: {
+          onStateChange: function (event) {
+
+            if (event.data === YT.PlayerState.PLAYING) {
+              stopBackgroundAudio();
+            }
+
+          }
+        }
+      });
+    });
+  };
+
+  if (window.YT && window.YT.Player) {
+    window.onYouTubeIframeAPIReady();
+  }
+})();
