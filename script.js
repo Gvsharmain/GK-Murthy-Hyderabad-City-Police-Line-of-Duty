@@ -428,35 +428,15 @@ if (flowerPhoto) {
 /* START */
 
 loadEvidence();
+
 /* YOUTUBE AUDIO CONTROL */
-(function () {
-  const audio = document.getElementById("background-audio");
-
-  if (!audio) return;
-
-  const youtubeVideos = [
-    "https://www.youtube.com/embed/7u1G6zIbDVA",
-    "https://www.youtube.com/embed/9zCC2nUSbQg"
-  ];
-
-  const frames = Array.from(document.querySelectorAll("iframe"))
-    .filter(frame => youtubeVideos.some(url => frame.src.includes(url)));
-
-  if (!frames.length) return;
-
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.head.appendChild(tag);
-})();
 /* STOP BACKGROUND AUDIO WHEN YOUTUBE PLAYS */
 (function () {
   const audio = document.getElementById("background-audio");
 
   if (!audio) return;
 
-  let players = [];
-
-  window.onYouTubeIframeAPIReady = function () {
+  function createYouTubePlayers() {
     const frames = Array.from(document.querySelectorAll("iframe"))
       .filter(frame =>
         frame.src.includes("7u1G6zIbDVA") ||
@@ -464,20 +444,22 @@ loadEvidence();
       );
 
     frames.forEach(frame => {
-      const player = new YT.Player(frame, {
+      new YT.Player(frame, {
         events: {
           onStateChange: function (event) {
-
             if (event.data === YT.PlayerState.PLAYING) {
               audio.pause();
               audio.currentTime = 0;
             }
-
           }
         }
       });
-
-      players.push(player);
     });
-  };
+  }
+
+  window.onYouTubeIframeAPIReady = createYouTubePlayers;
+
+  if (window.YT && window.YT.Player) {
+    createYouTubePlayers();
+  }
 })();
