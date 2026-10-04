@@ -430,36 +430,5 @@ if (flowerPhoto) {
 loadEvidence();
 
 /* YOUTUBE AUDIO CONTROL */
+
 /* STOP BACKGROUND AUDIO WHEN YOUTUBE PLAYS */
-(function () {
-  const audio = document.getElementById("background-audio");
-
-  if (!audio) return;
-
-  function createYouTubePlayers() {
-    const frames = Array.from(document.querySelectorAll("iframe"))
-      .filter(frame =>
-        frame.src.includes("7u1G6zIbDVA") ||
-        frame.src.includes("9zCC2nUSbQg")
-      );
-
-    frames.forEach(frame => {
-      new YT.Player(frame, {
-        events: {
-          onStateChange: function (event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-              audio.pause();
-              audio.currentTime = 0;
-            }
-          }
-        }
-      });
-    });
-  }
-
-  window.onYouTubeIframeAPIReady = createYouTubePlayers;
-
-  if (window.YT && window.YT.Player) {
-    createYouTubePlayers();
-  }
-})();
