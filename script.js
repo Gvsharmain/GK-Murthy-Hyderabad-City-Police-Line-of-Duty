@@ -470,8 +470,6 @@ loadEvidence();
   }
 
   /* Check every second */
-  setInterval(updateAudio, 1000);
-
   function setupYouTubePlayers() {
 
     if (!window.YT || !window.YT.Player) return;
