@@ -411,51 +411,40 @@ if (flowerPhoto) {
   if (!audio) return;
 
   audio.loop = true;
-
-  const startAudio = () => {
-    audio.play().catch(() => {
-      // Chrome may block autoplay until the visitor interacts with the page.
-    });
-  };
-
-  startAudio();
-
-  document.addEventListener("click", startAudio, { once: true });
-  document.addEventListener("touchstart", startAudio, { once: true });
-  document.addEventListener("keydown", startAudio, { once: true });
-
-// Background audio
-(() => {
-  const audio = document.getElementById("background-audio");
-
-  if (!audio) return;
-
-  audio.loop = true;
   audio.preload = "auto";
 
   const startAudio = () => {
     audio.play().catch(() => {
-      // Mobile browser may block autoplay until user interaction.
+      // Browser may block autoplay until user interaction.
     });
   };
 
-  // 1. Try automatic playback immediately
+  // Try automatic playback immediately
   startAudio();
 
-  // 2. Start on first mobile swipe / scroll
+  // Start audio when the user scrolls
   let scrollAudioStarted = false;
 
   const startFromScroll = () => {
     if (scrollAudioStarted) return;
 
     scrollAudioStarted = true;
-    startAudio()
-    passive: true});
+    startAudio();
+  };
+
+  window.addEventListener("scroll", startFromScroll, {
+    passive: true
+  });
+
+  window.addEventListener("touchmove", startFromScroll, {
+    passive: true
+  });
+
+  document.addEventListener("click", startAudio, { once: true });
+  document.addEventListener("touchstart", startAudio, { once: true });
+  document.addEventListener("keydown", startAudio, { once: true });
 })();
-
-/* 
-START */
-
+/* START */
 loadEvidence();
 /* AUDIO FALLBACK + YOUTUBE CONTROL */
 /* AUDIO FALLBACK + YOUTUBE CONTROL */
