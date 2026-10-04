@@ -430,5 +430,39 @@ if (flowerPhoto) {
 loadEvidence();
 
 /* YOUTUBE AUDIO CONTROL */
+/* AUDIO FALLBACK MONITOR */
+(() => {
+  const audio = document.getElementById("background-audio");
+
+  if (!audio) return;
+
+  function otherAudioIsPlaying() {
+    const media = document.querySelectorAll("audio, video");
+
+    return Array.from(media).some(mediaElement => {
+      return (
+        mediaElement !== audio &&
+        !mediaElement.paused &&
+        !mediaElement.ended &&
+        mediaElement.readyState >= 2
+      );
+    });
+  }
+
+  function updateBackgroundAudio() {
+    if (otherAudioIsPlaying()) {
+      if (!audio.paused) {
+        audio.pause();
+      }
+      return;
+    }
+
+    audio.play().catch(() => {
+      // Browser may block autoplay.
+    });
+  }
+
+  setInterval(updateBackgroundAudio, 1000);
+})();
 
 /* STOP BACKGROUND AUDIO WHEN YOUTUBE PLAYS */
