@@ -448,3 +448,36 @@ loadEvidence();
   tag.src = "https://www.youtube.com/iframe_api";
   document.head.appendChild(tag);
 })();
+/* STOP BACKGROUND AUDIO WHEN YOUTUBE PLAYS */
+(function () {
+  const audio = document.getElementById("background-audio");
+
+  if (!audio) return;
+
+  let players = [];
+
+  window.onYouTubeIframeAPIReady = function () {
+    const frames = Array.from(document.querySelectorAll("iframe"))
+      .filter(frame =>
+        frame.src.includes("7u1G6zIbDVA") ||
+        frame.src.includes("9zCC2nUSbQg")
+      );
+
+    frames.forEach(frame => {
+      const player = new YT.Player(frame, {
+        events: {
+          onStateChange: function (event) {
+
+            if (event.data === YT.PlayerState.PLAYING) {
+              audio.pause();
+              audio.currentTime = 0;
+            }
+
+          }
+        }
+      });
+
+      players.push(player);
+    });
+  };
+})();
