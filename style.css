@@ -1308,24 +1308,27 @@ footer b {
 
 /* Red roses */
 .red-rose {
+/* Red roses */
+.red-rose {
   position: absolute;
   top: -40px;
-  z-index: 2;
-  font-size: 22px;
+  z-index: 10;
+  display: block;
+  font-size: 26px;
   line-height: 1;
   pointer-events: none;
   user-select: none;
   animation-name: roseFall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  will-change: transform, top, opacity;
+  will-change: top, transform, opacity;
 }
 
 @keyframes roseFall {
   0% {
     top: -40px;
     opacity: 0;
-    transform: rotate(0deg) scale(0.8);
+    transform: translateX(0) rotate(0deg) scale(0.8);
   }
 
   10% {
@@ -1333,12 +1336,12 @@ footer b {
   }
 
   50% {
-    transform: translateX(18px) rotate(120deg) scale(1);
+    transform: translateX(25px) rotate(180deg) scale(1);
   }
 
   100% {
     top: 105%;
     opacity: 0;
-    transform: translateX(-18px) rotate(300deg) scale(0.8);
+    transform: translateX(-25px) rotate(360deg) scale(0.8);
   }
 }
