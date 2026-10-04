@@ -449,19 +449,8 @@ if (flowerPhoto) {
     if (scrollAudioStarted) return;
 
     scrollAudioStarted = true;
-    startAudio();
-
-    window.removeEventListener("scroll", startFromScroll);
-    window.removeEventListener("touchmove", startFromScroll);
-  };
-
-  window.addEventListener("scroll", startFromScroll, {
-    passive: true
-  });
-
-  window.addEventListener("touchmove", startFromScroll, {
-    passive: true
-  });
+    startAudio()
+    passive: true});
 })();
 
 /* 
