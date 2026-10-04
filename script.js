@@ -423,15 +423,45 @@ if (flowerPhoto) {
   document.addEventListener("click", startAudio, { once: true });
   document.addEventListener("touchstart", startAudio, { once: true });
   document.addEventListener("keydown", startAudio, { once: true });
-   
-let scrollAudioStarted = false;
 
-window.addEventListener("scroll", () => {
-  if (scrollAudioStarted) return;
+// Background audio
+(() => {
+  const audio = document.getElementById("background-audio");
 
-  scrollAudioStarted = true;
+  if (!audio) return;
+
+  audio.loop = true;
+  audio.preload = "auto";
+
+  const startAudio = () => {
+    audio.play().catch(() => {
+      // Mobile browser may block autoplay until user interaction.
+    });
+  };
+
+  // 1. Try automatic playback immediately
   startAudio();
-}, { passive: true });
+
+  // 2. Start on first mobile swipe / scroll
+  let scrollAudioStarted = false;
+
+  const startFromScroll = () => {
+    if (scrollAudioStarted) return;
+
+    scrollAudioStarted = true;
+    startAudio();
+
+    window.removeEventListener("scroll", startFromScroll);
+    window.removeEventListener("touchmove", startFromScroll);
+  };
+
+  window.addEventListener("scroll", startFromScroll, {
+    passive: true
+  });
+
+  window.addEventListener("touchmove", startFromScroll, {
+    passive: true
+  });
 })();
 
 /* 
