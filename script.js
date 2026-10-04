@@ -423,9 +423,19 @@ if (flowerPhoto) {
   document.addEventListener("click", startAudio, { once: true });
   document.addEventListener("touchstart", startAudio, { once: true });
   document.addEventListener("keydown", startAudio, { once: true });
+   
+let scrollAudioStarted = false;
+
+window.addEventListener("scroll", () => {
+  if (scrollAudioStarted) return;
+
+  scrollAudioStarted = true;
+  startAudio();
+}, { passive: true });
 })();
 
-/* START */
+/* 
+START */
 
 loadEvidence();
 /* AUDIO FALLBACK + YOUTUBE CONTROL */
