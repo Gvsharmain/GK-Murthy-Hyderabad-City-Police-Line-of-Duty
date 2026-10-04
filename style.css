@@ -1228,6 +1228,7 @@ footer b {
     transform: translate3d(-25px, 430px, 0) rotate(360deg);
     opacity: 0;
   }
+  }
 .support-toggle {
   max-width: 980px;
   margin: 0 auto;
