@@ -404,6 +404,27 @@ if (flowerPhoto) {
     flowerPhoto.appendChild(petal);
   }
 }
+// Background audio
+(() => {
+  const audio = document.getElementById("background-audio");
+
+  if (!audio) return;
+
+  audio.loop = true;
+
+  const startAudio = () => {
+    audio.play().catch(() => {
+      // Chrome may block autoplay until the visitor interacts with the page.
+    });
+  };
+
+  startAudio();
+
+  document.addEventListener("click", startAudio, { once: true });
+  document.addEventListener("touchstart", startAudio, { once: true });
+  document.addEventListener("keydown", startAudio, { once: true });
+})();
+
 /* START */
 
 loadEvidence();
