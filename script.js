@@ -428,3 +428,23 @@ if (flowerPhoto) {
 /* START */
 
 loadEvidence();
+/* YOUTUBE AUDIO CONTROL */
+(function () {
+  const audio = document.getElementById("background-audio");
+
+  if (!audio) return;
+
+  const youtubeVideos = [
+    "https://www.youtube.com/embed/7u1G6zIbDVA",
+    "https://www.youtube.com/embed/9zCC2nUSbQg"
+  ];
+
+  const frames = Array.from(document.querySelectorAll("iframe"))
+    .filter(frame => youtubeVideos.some(url => frame.src.includes(url)));
+
+  if (!frames.length) return;
+
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+})();
