@@ -429,12 +429,14 @@ if (flowerPhoto) {
 
 loadEvidence();
 /* AUDIO FALLBACK + YOUTUBE CONTROL */
+/* AUDIO FALLBACK + YOUTUBE CONTROL */
 (() => {
   const audio = document.getElementById("background-audio");
 
   if (!audio) return;
 
-  /* Stop our MP3 if another native audio/video plays */
+  let youtubePlaying = false;
+
   function otherMediaPlaying() {
     return Array.from(document.querySelectorAll("audio, video"))
       .some(media => {
@@ -448,19 +450,30 @@ loadEvidence();
   }
 
   function updateAudio() {
+
+    /* Never restart our MP3 while YouTube is playing */
+    if (youtubePlaying) {
+      if (!audio.paused) {
+        audio.pause();
+      }
+      return;
+    }
+
     if (otherMediaPlaying()) {
-      audio.pause();
+      if (!audio.paused) {
+        audio.pause();
+      }
       return;
     }
 
     audio.play().catch(() => {});
   }
 
-  /* Check native media every second */
+  /* Check every second */
   setInterval(updateAudio, 1000);
 
-  /* YouTube control */
   function setupYouTubePlayers() {
+
     if (!window.YT || !window.YT.Player) return;
 
     const frames = Array.from(document.querySelectorAll("iframe"))
@@ -469,34 +482,50 @@ loadEvidence();
       );
 
     frames.forEach(frame => {
+
       new YT.Player(frame, {
+
         events: {
+
           onStateChange: event => {
 
             if (event.data === YT.PlayerState.PLAYING) {
+
+              youtubePlaying = true;
+
               audio.pause();
               audio.currentTime = 0;
+
             }
 
             if (
               event.data === YT.PlayerState.PAUSED ||
               event.data === YT.PlayerState.ENDED
             ) {
+
+              youtubePlaying = false;
+
               audio.play().catch(() => {});
+
             }
 
           }
+
         }
+
       });
+
     });
+
   }
 
-  /* Load YouTube API */
   window.onYouTubeIframeAPIReady = setupYouTubePlayers;
 
   const youtubeAPI = document.createElement("script");
+
   youtubeAPI.src = "https://www.youtube.com/iframe_api";
   youtubeAPI.async = true;
-  document.head.appendChild(youtubeAPI);
-})();
 
+  document.head.appendChild(youtubeAPI);
+
+})();
