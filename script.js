@@ -404,6 +404,23 @@ if (flowerPhoto) {
     flowerPhoto.appendChild(petal);
   }
 }
+// Red roses
+if (flowerPhoto) {
+  for (let i = 0; i < 5; i++) {
+    const rose = document.createElement("span");
+
+    rose.className = "red-rose";
+
+    rose.style.left = `${10 + Math.random() * 80}%`;
+    rose.style.animationDuration = `${7 + Math.random() * 5}s`;
+    rose.style.animationDelay = `${Math.random() * 5}s`;
+    rose.style.transform = `scale(${0.7 + Math.random() * 0.5})`;
+
+    rose.textContent = "🌹";
+
+    flowerPhoto.appendChild(rose);
+  }
+}
 // Background audio
 (() => {
   const audio = document.getElementById("background-audio");
