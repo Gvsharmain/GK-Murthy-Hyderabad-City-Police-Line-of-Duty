@@ -1346,4 +1346,130 @@ footer b {
     opacity: 0;
     transform: translateX(-30px) rotate(360deg) scale(.85);
   }
+  /* SERVICE HONOUR BANNER */
+.service-honour-banner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 24px;
+  background: linear-gradient(
+    135deg,
+    #09162c 0%,
+    #102b4d 55%,
+    #18365d 100%
+  );
+  color: #ffffff;
+  border-bottom: 3px solid #c7a04d;
+}
+
+.service-honour-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-honour-kicker {
+  margin-bottom: 10px;
+  color: #e2c36e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.service-honour-banner h2 {
+  margin: 0 0 10px;
+  color: #e2c36e;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.3;
+}
+
+.service-honour-banner h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.4;
+}
+
+.service-honour-rank {
+  margin: 0;
+  color: #d9e1ec;
+  font-size: 15px;
+}
+
+.service-honour-divider {
+  width: 90px;
+  height: 2px;
+  margin: 20px auto;
+  background: #c7a04d;
+}
+
+.service-honour-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.service-honour-item,
+.service-honour-unit {
+  box-sizing: border-box;
+  padding: 14px 18px;
+  border: 1px solid rgba(226, 195, 110, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.service-honour-item {
+  min-width: 220px;
+}
+
+.service-honour-item span,
+.service-honour-unit span {
+  display: block;
+  margin-bottom: 7px;
+  color: #e2c36e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.service-honour-item strong,
+.service-honour-unit strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.service-honour-unit {
+  flex-basis: 100%;
+  max-width: 650px;
+}
+
+.service-honour-unit p {
+  margin: 7px 0 0;
+  color: #d9e1ec;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .service-honour-banner {
+    padding: 25px 16px;
+  }
+
+  .service-honour-details {
+    gap: 10px;
+  }
+
+  .service-honour-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .service-honour-unit {
+    width: 100%;
+  }
+}
 }
