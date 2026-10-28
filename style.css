@@ -1346,6 +1346,7 @@ footer b {
     opacity: 0;
     transform: translateX(-30px) rotate(360deg) scale(.85);
   }
+  }
   /* SERVICE HONOUR BANNER */
 .service-honour-banner {
   width: 100%;
