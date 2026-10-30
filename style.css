@@ -1389,8 +1389,10 @@ footer b {
 }
 /* Show the complete landscape photograph on the right */
 .right-photo img {
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: contain;
-  background: #09162c;
+  background: transparent;
 }
 
 .service-honour-inner {
