@@ -1387,6 +1387,11 @@ footer b {
   object-position: center;
   border-radius: 7px;
 }
+/* Show the complete landscape photograph on the right */
+.right-photo img {
+  object-fit: contain;
+  background: #09162c;
+}
 
 .service-honour-inner {
   width: 100%;
