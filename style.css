@@ -1388,8 +1388,15 @@ footer b {
   border-radius: 7px;
 }
 /* Show the complete landscape photograph on the right */
-.right-photo img {
+.right-photo {
+  align-self: center;
   height: auto;
+}
+
+.right-photo img {
+  display: block;
+  width: 100%;
+  height: auto !important;
   aspect-ratio: 3 / 2;
   object-fit: contain;
   background: transparent;
