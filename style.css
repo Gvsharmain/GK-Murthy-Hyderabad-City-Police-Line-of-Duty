@@ -1539,3 +1539,185 @@ footer b {
     flex-basis: 100%;
   }
 }
+/* =====================================================
+   MOOT COURT REHEARSAL — PREMIUM COURTROOM THEME
+   Warm parchment, antique gold and rich brown
+   ===================================================== */
+
+/* Main section background */
+
+#moot-court {
+  background: linear-gradient(
+    180deg,
+    #f7ecd9 0%,
+    #efdfc5 55%,
+    #ead5b5 100%
+  );
+  color: #382313;
+}
+
+/* Section label */
+
+#moot-court .kicker {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(100deg, #75400e, #b17a2d);
+  color: #fff8e9;
+  border-radius: 25px;
+  letter-spacing: .13em;
+  font-size: 11px;
+}
+
+/* Main heading */
+
+#moot-court h2 {
+  color: #542b12;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.3;
+  margin-bottom: 18px;
+  letter-spacing: -.025em;
+}
+
+#moot-court .intro {
+  color: #594b3d;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Main courtroom panel */
+
+#moot-court .moot-court-panel {
+  margin-top: 32px;
+  padding: 30px;
+  background: rgba(255, 250, 240, .97);
+  border: 1px solid #d9b779;
+  border-top: 5px solid #94601e;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(91, 54, 17, .13);
+}
+
+/* Court heading */
+
+#moot-court .moot-court-panel > h3:first-child {
+  margin-top: 0;
+  padding: 17px 20px;
+  background: linear-gradient(100deg, #75400e, #a66d25);
+  color: #fff8e9;
+  border-radius: 8px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+/* Part headings */
+
+#moot-court .moot-court-panel h3 {
+  color: #704014;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.55;
+  margin: 34px 0 18px;
+  padding: 13px 17px;
+  background: linear-gradient(90deg, #efd19a, #f9e9c9);
+  border-left: 5px solid #a66d25;
+  border-radius: 7px;
+}
+
+/* Dialogue paragraphs */
+
+#moot-court .moot-court-panel p {
+  color: #344052;
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 16px 0;
+}
+
+/* Speaker names */
+
+#moot-court .moot-court-panel p b {
+  color: #794513;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .045em;
+}
+
+/* =====================================================
+   DISCLAIMER PANELS — ALL WEBSITE SECTIONS
+   ===================================================== */
+
+.legal-note {
+  margin-top: 20px;
+  padding: 22px !important;
+  background: #fff0b8 !important;
+  color: #38220d !important;
+  border: 2px solid #e5a000 !important;
+  border-left: 7px solid #d47700 !important;
+  border-radius: 9px;
+  font-size: 14px !important;
+  font-weight: 500;
+  line-height: 1.9 !important;
+  box-shadow: 0 5px 16px rgba(105, 65, 10, .15);
+}
+
+/* Bright, prominent disclaimer headings */
+
+.legal-note b {
+  display: inline-block;
+  color: #8a3200 !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  letter-spacing: .045em;
+}
+
+/* Disclaimer paragraph readability */
+
+.legal-note p {
+  color: #38220d !important;
+}
+
+/* Moot Court disclaimer spacing */
+
+#moot-court .legal-note {
+  margin: 22px 0;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  #moot-court .moot-court-panel {
+    padding: 17px;
+  }
+
+  #moot-court .moot-court-panel > h3:first-child {
+    font-size: 17px;
+    padding: 14px;
+  }
+
+  #moot-court .moot-court-panel h3 {
+    font-size: 16px;
+    padding: 11px 13px;
+  }
+
+  #moot-court .moot-court-panel p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  #moot-court .legal-note,
+  .legal-note {
+    padding: 16px !important;
+    font-size: 13px !important;
+  }
+
+  .legal-note b {
+    font-size: 14px !important;
+  }
+}
+
+/* =====================================================
+   END — MOOT COURT COURTROOM THEME
+   ===================================================== */
