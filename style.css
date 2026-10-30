@@ -1498,7 +1498,7 @@ footer b {
 /* TABLET */
 @media (max-width: 900px) {
   .service-honour-layout {
-    grid-template-columns: 180px minmax(0, 1fr) 180px;
+    grid-template-columns: 180px minmax(0, 1fr) 260px;
     gap: 16px;
   }
 
