@@ -1361,7 +1361,7 @@ footer b {
 
 .service-honour-layout {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr) 300px;
