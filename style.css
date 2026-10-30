@@ -1364,7 +1364,7 @@ footer b {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr) 380px;
+  grid-template-columns: 220px minmax(0, 1fr) 420px;
   gap: 24px;
   align-items: center;
 }
