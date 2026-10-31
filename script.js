@@ -164,8 +164,11 @@ if (category === "lokayukta") {
   categoryMatch =
     doc.category === "Lokayukta / Administrative Grievance";
 }
-
-         const searchableText =
+if (category === "pension") {
+  categoryMatch =
+    doc.category === "Extraordinary Family Pension";
+}
+        const searchableText =
           [
             doc.id,
             doc.date,
