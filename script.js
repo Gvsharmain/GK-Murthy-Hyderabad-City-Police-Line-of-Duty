@@ -168,6 +168,10 @@ if (category === "pension") {
   categoryMatch =
     doc.category === "Extraordinary Family Pension";
 }
+   if (category === "family") {
+  categoryMatch =
+    doc.category === "Family Circumstances / Financial Distress";
+}
         const searchableText =
           [
             doc.id,
